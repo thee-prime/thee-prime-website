@@ -1,0 +1,60 @@
+name: Deploy to Shared Hosting
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, intl, bcmath, fileinfo
+          coverage: none
+
+      - name: Install PHP Dependencies
+        run: |
+          composer install --no-dev --optimize-autoloader --no-progress --no-interaction --prefer-dist
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build Frontend Assets
+        run: |
+          npm ci
+          npm run build
+
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ./
+          local-dir: ./
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            node_modules/**
+            tests/**
+            storage/*.key
+            .env
+            .env.example
+            .editorconfig
+            .prettierrc
+            .prettierignore
+            phpunit.xml
+            pint.json
+            README.md
+            **/.DS_Store
