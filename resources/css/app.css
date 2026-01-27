@@ -1,0 +1,104 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@theme {
+    --font-sans:
+        'Inter', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* Prose dark mode styles for markdown content */
+.prose {
+    --tw-prose-body: #cbd5e1;
+    --tw-prose-headings: #ffffff;
+    --tw-prose-lead: #94a3b8;
+    --tw-prose-links: #a78bfa;
+    --tw-prose-bold: #ffffff;
+    --tw-prose-counters: #94a3b8;
+    --tw-prose-bullets: #64748b;
+    --tw-prose-hr: #334155;
+    --tw-prose-quotes: #e2e8f0;
+    --tw-prose-quote-borders: #6366f1;
+    --tw-prose-captions: #94a3b8;
+    --tw-prose-code: #c4b5fd;
+    --tw-prose-pre-code: #e2e8f0;
+    --tw-prose-pre-bg: #1e293b;
+    --tw-prose-th-borders: #475569;
+    --tw-prose-td-borders: #334155;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Smooth transitions */
+* {
+    scroll-behavior: smooth;
+}
+
+/* Markdown editor dark theme overrides */
+.w-md-editor {
+    --color-canvas-default: #0f172a !important;
+    --color-canvas-subtle: #1e293b !important;
+    --color-border-default: #334155 !important;
+    --color-border-muted: #1e293b !important;
+    --color-fg-default: #e2e8f0 !important;
+    --color-fg-muted: #94a3b8 !important;
+    --color-accent-fg: #a78bfa !important;
+}
+
+.w-md-editor-toolbar {
+    background-color: #1e293b !important;
+    border-bottom: 1px solid #334155 !important;
+}
+
+.w-md-editor-content {
+    background-color: #0f172a !important;
+}
+
+.w-md-editor-preview {
+    background-color: #0f172a !important;
+}
+
+.wmde-markdown {
+    background-color: transparent !important;
+    color: #e2e8f0 !important;
+}
+
+.wmde-markdown pre {
+    background-color: #1e293b !important;
+    border: 1px solid #334155 !important;
+}
+
+.wmde-markdown code {
+    background-color: #1e293b !important;
+    color: #c4b5fd !important;
+}

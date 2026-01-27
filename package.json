@@ -1,0 +1,62 @@
+{
+    "$schema": "https://www.schemastore.org/package.json",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "vite build",
+        "build:ssr": "vite build && vite build --ssr",
+        "dev": "vite",
+        "format": "prettier --write resources/",
+        "format:check": "prettier --check resources/",
+        "lint": "eslint . --fix"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.19.0",
+        "@laravel/vite-plugin-wayfinder": "^0.1.3",
+        "babel-plugin-react-compiler": "^1.0.0",
+        "eslint": "^9.17.0",
+        "eslint-config-prettier": "^10.0.1",
+        "eslint-plugin-import": "^2.32.0",
+        "eslint-plugin-react": "^7.37.3",
+        "eslint-plugin-react-hooks": "^5.1.0",
+        "prettier": "^3.4.2",
+        "prettier-plugin-tailwindcss": "^0.6.11"
+    },
+    "dependencies": {
+        "@inertiajs/react": "^2.3.7",
+        "@tailwindcss/typography": "^0.5.19",
+        "@tailwindcss/vite": "^4.1.11",
+        "@tinymce/tinymce-react": "^6.3.0",
+        "@tiptap/extension-image": "^3.17.1",
+        "@tiptap/extension-link": "^3.17.1",
+        "@tiptap/extension-placeholder": "^3.17.1",
+        "@tiptap/extension-text-align": "^3.17.1",
+        "@tiptap/extension-underline": "^3.17.1",
+        "@tiptap/pm": "^3.17.1",
+        "@tiptap/react": "^3.17.1",
+        "@tiptap/starter-kit": "^3.17.1",
+        "@uiw/react-md-editor": "^4.0.11",
+        "@vitejs/plugin-react": "^5.0.0",
+        "class-variance-authority": "^0.7.1",
+        "clsx": "^2.1.1",
+        "concurrently": "^9.0.1",
+        "date-fns": "^4.1.0",
+        "globals": "^15.14.0",
+        "laravel-vite-plugin": "^2.0",
+        "lucide-react": "^0.563.0",
+        "react": "^19.2.0",
+        "react-dom": "^19.2.0",
+        "react-markdown": "^10.1.0",
+        "react-syntax-highlighter": "^16.1.0",
+        "tailwind-merge": "^3.0.1",
+        "tailwindcss": "^4.0.0",
+        "tinymce": "^8.3.2",
+        "tiptap-markdown": "^0.9.0",
+        "vite": "^7.0.4"
+    },
+    "optionalDependencies": {
+        "@rollup/rollup-linux-x64-gnu": "4.9.5",
+        "@tailwindcss/oxide-linux-x64-gnu": "^4.0.1",
+        "lightningcss-linux-x64-gnu": "^1.29.1"
+    }
+}
