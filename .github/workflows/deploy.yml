@@ -50,6 +50,7 @@ jobs:
             tests/**
             storage/*.key
             .env
+            vendor/
             .env.example
             .editorconfig
             .prettierrc
