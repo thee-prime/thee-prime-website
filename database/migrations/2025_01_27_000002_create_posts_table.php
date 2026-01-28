@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -24,11 +23,11 @@ return new class extends Migration
             $table->boolean('is_published')->default(false);
             $table->timestamp('published_at')->nullable();
             $table->unsignedBigInteger('view_count')->default(0);
-            $table->string('focus_keyword')->nullable()->after('meta_description');
-            $table->text('keywords')->nullable()->after('focus_keyword'); // JSON array
-            $table->string('og_image')->nullable()->after('keywords');
-            $table->string('canonical_url')->nullable()->after('og_image');
-            $table->tinyInteger('seo_score')->nullable()->after('canonical_url');
+            $table->string('focus_keyword')->nullable();
+            $table->text('keywords')->nullable();
+            $table->string('og_image')->nullable();
+            $table->string('canonical_url')->nullable();
+            $table->tinyInteger('seo_score')->nullable();
             $table->timestamps();
 
             // Index for faster lookups
